@@ -21,35 +21,9 @@ public class Review extends Application {
 
     private Stage stage;
     private Text actiontarget2;
-
-
-
+    
 
     @Override
-//    public void start(Stage primaryStage) {
-//        primaryStage.setTitle("Review");
-//
-//        // Create buttons
-//        Button changeInfoBtn = new Button("Change Info");
-//        Button validateUserBtn = new Button("Validate User");
-//
-//        // Set actions for buttons
-//        changeInfoBtn.setOnAction(new ChangeInfoHandler());
-//        validateUserBtn.setOnAction(new ValidateUserHandler());
-//
-//        // Add buttons to VBox
-//        VBox vbox = new VBox(10);
-//        vbox.setAlignment(Pos.CENTER);
-//        vbox.setPadding(new Insets(20));
-//        vbox.getChildren().addAll(changeInfoBtn, validateUserBtn);
-//
-//        // Set the scene
-//        Scene scene = new Scene(vbox, 300, 200);
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
-//
-//    }
-
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Review");
 
