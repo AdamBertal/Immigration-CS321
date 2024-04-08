@@ -1,6 +1,6 @@
-package com;
+package com1;
 
-public class FormData {
+public class FormDataTest {
     String name = "";
     String DOB = "";
     String address = "";
@@ -39,7 +39,7 @@ public class FormData {
         return greenCardNumber;
     }
 
-    public FormData(String name, String DOB, String address) {
+    public FormDataTest(String name, String DOB, String address) {
         this.name = name;
         this.DOB = DOB;
         this.address = address;

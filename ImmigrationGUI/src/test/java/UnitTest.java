@@ -1,9 +1,9 @@
-import com.Workflow;
+import com1.WorkflowTest;
 import org.junit.jupiter.api.Test;
 
-import com.Immigration;
+import com1.ImmigrationTest;
 
-import com.FormData;
+import com1.FormDataTest;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -18,7 +18,7 @@ public class UnitTest {
     @Test
     void TestNewWFCount () {
 
-        Immigration wfobj = new Immigration();
+        ImmigrationTest wfobj = new ImmigrationTest();
         int totalwf = wfobj.CountWFItems("null");
         assertEquals(totalwf, 0);
 
@@ -31,10 +31,10 @@ public class UnitTest {
     @Test
     void TestAddDependent(){
 
-        LinkedList<FormData> dependentList = new LinkedList<>();
+        LinkedList<FormDataTest> dependentList = new LinkedList<>();
 
-        Immigration addDepObj = new Immigration();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
+        ImmigrationTest addDepObj = new ImmigrationTest();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
         int addDep = addDepObj.addDependent(person, dependentList);
 
         assertTrue(dependentList.size() == 1);
@@ -46,10 +46,10 @@ public class UnitTest {
     @Test
     void TestAddDependentFail(){
 
-        LinkedList<FormData> dependentList = new LinkedList<>();
+        LinkedList<FormDataTest> dependentList = new LinkedList<>();
 
-        Immigration addDepObj = new Immigration();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
+        ImmigrationTest addDepObj = new ImmigrationTest();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
         int addDep = addDepObj.addDependent(person, dependentList);
 
         assertTrue(dependentList.size() != 1);
@@ -61,11 +61,11 @@ public class UnitTest {
     @Test
     void TestRemoveDependent(){
 
-        LinkedList<FormData> dependentList = new LinkedList<>();
-        FormData person = new FormData("Gus","10/24/2102","OakRoad531");
+        LinkedList<FormDataTest> dependentList = new LinkedList<>();
+        FormDataTest person = new FormDataTest("Gus","10/24/2102","OakRoad531");
         dependentList.add(person);
 
-        Immigration addDepObj = new Immigration();
+        ImmigrationTest addDepObj = new ImmigrationTest();
         int addDep = addDepObj.addDependent(person, dependentList);
 
         assertTrue(dependentList.isEmpty());
@@ -78,11 +78,11 @@ public class UnitTest {
     @Test
     void TestRemoveDependentFail(){
 
-        LinkedList<FormData> dependentList = new LinkedList<>();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
+        LinkedList<FormDataTest> dependentList = new LinkedList<>();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
         dependentList.add(person);
 
-        Immigration addDepObj = new Immigration();
+        ImmigrationTest addDepObj = new ImmigrationTest();
         int addDep = addDepObj.addDependent(person, dependentList);
 
         assertTrue(dependentList.isEmpty());
@@ -96,9 +96,9 @@ public class UnitTest {
     @Test
     void TestReviewData(){
 
-        Immigration revObj = new Immigration();
+        ImmigrationTest revObj = new ImmigrationTest();
         File file = null; //link up to file for real tester
-        FormData revData = revObj.reviewData(file);
+        FormDataTest revData = revObj.reviewData(file);
 
         assertEquals(revData.getName(), "jack");
         assertEquals(revData.getAddress(), "1092 oak tree road");
@@ -112,8 +112,8 @@ public class UnitTest {
      */
     @Test
     void TestApproveData(){
-        Immigration appObj = new Immigration();
-        FormData person =  new FormData(null,null,null);
+        ImmigrationTest appObj = new ImmigrationTest();
+        FormDataTest person =  new FormDataTest(null,null,null);
         int data = appObj.approveData(person);
         assertEquals(data, 0);
 
@@ -124,8 +124,8 @@ public class UnitTest {
     */
     @Test
     void TestApproveDataFail(){
-        Immigration appObj = new Immigration();
-        FormData person =  new FormData("jack",null,"5324 Ryan road");
+        ImmigrationTest appObj = new ImmigrationTest();
+        FormDataTest person =  new FormDataTest("jack",null,"5324 Ryan road");
         int data = appObj.approveData(person);
         assertEquals(data, 0);
 
@@ -137,8 +137,8 @@ public class UnitTest {
      */
     @Test
     void TestValidateForm(){
-        Immigration valObj = new Immigration();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
+        ImmigrationTest valObj = new ImmigrationTest();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
         int val = valObj.validateForm(person);
         assertEquals(val, 0);
     }
@@ -148,7 +148,7 @@ public class UnitTest {
      */
     @Test
     void TestRequestAlienFianceChildren(){
-        Immigration valObj = new Immigration();
+        ImmigrationTest valObj = new ImmigrationTest();
         boolean request = valObj.requestAlienFianceChildren("1");
         assertTrue(request);
     }
@@ -162,9 +162,9 @@ public class UnitTest {
      */
     @Test
     void TestUpdateDataEntry(){
-        Workflow valObj = new Workflow();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
-        FormData val = valObj.updateDataEntry(person, "ryan", null, null, 0);
+        WorkflowTest valObj = new WorkflowTest();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
+        FormDataTest val = valObj.updateDataEntry(person, "ryan", null, null, 0);
         if(Objects.equals(val.getName(), "ryan")){
             assertTrue(true);
         }else{
@@ -180,8 +180,8 @@ public class UnitTest {
 
     @Test
     void TestUpdateReviewEntry(){
-        Workflow valObj = new Workflow();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
+        WorkflowTest valObj = new WorkflowTest();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
         int val = valObj.updateReviewEntry(person);
         assertEquals(val, 0);
     }
@@ -194,8 +194,8 @@ public class UnitTest {
 
     @Test
     void TestUpdateApprovalEntry(){
-        Workflow valObj = new Workflow();
-        FormData person = new FormData("Adam","10/24/2102","OakRoad531");
+        WorkflowTest valObj = new WorkflowTest();
+        FormDataTest person = new FormDataTest("Adam","10/24/2102","OakRoad531");
         String val = valObj.updateApprovalEntry(person);
         assertEquals(val, "approvedMessage");
     }

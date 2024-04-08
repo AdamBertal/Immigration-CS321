@@ -1,8 +1,8 @@
-package com;
+package com1;
 import java.io.File;
 import java.util.LinkedList;
 
-public class Immigration {
+public class ImmigrationTest {
 
     String immigrandId = "";
 
@@ -31,7 +31,7 @@ public class Immigration {
       this will add a dependent to the person
       return 0 for good 1 for fail
      */
-    public int addDependent(FormData data, LinkedList<FormData> dependentList){
+    public int addDependent(FormDataTest data, LinkedList<FormDataTest> dependentList){
         return 0;
     }
 
@@ -39,7 +39,7 @@ public class Immigration {
      this will remove a dependent from the person
      return 0 for good 1 for fail
     */
-    public int removeDependent(FormData data, LinkedList<FormData> dependentList){
+    public int removeDependent(FormDataTest data, LinkedList<FormDataTest> dependentList){
         return 0;
     }
 
@@ -48,7 +48,7 @@ public class Immigration {
     reads form data and populates the data
     return NULL if failed or obj of populated form data
      */
-    public FormData reviewData(File form){
+    public FormDataTest reviewData(File form){
         return null;
     }
 
@@ -57,7 +57,7 @@ public class Immigration {
     linked up with database and checks if info is valid
     return 0 if approved 1 if not
      */
-    public int approveData(FormData data){
+    public int approveData(FormDataTest data){
         return 0;
     }
 
@@ -65,7 +65,7 @@ public class Immigration {
     checks form to make sure everything in the form is the correct type of input
     return 0 for valid input otherwise 1
      */
-    public int validateForm(FormData data){
+    public int validateForm(FormDataTest data){
         return 0;
     }
 
